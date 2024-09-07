@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAT Exploit</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000; /* Black background */
+            overflow: hidden;
+            color: white;
+            scroll-behavior: smooth;
+        }
+
+        /* Container styling */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        /* Discord Button Styling */
+        .btn {
+            background-color: #7289da;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 30px; /* More rounded corners */
+            font-size: 18px;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .btn:hover {
+            background-color: #5a6cb2;
+            transform: scale(1.05); /* Slightly enlarges the button */
+        }
+
+        /* Animation background */
+        @keyframes move {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-100vh) rotate(720deg); }
+        }
+
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .background-animation .dot {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: move 10s linear infinite;
+        }
+
+        /* Randomized positioning and delay for dots */
+        .background-animation .dot:nth-child(odd) {
+            animation-delay: -2s;
+        }
+        .background-animation .dot:nth-child(even) {
+            animation-delay: -5s;
+        }
+
+        /* Countdown Styling */
+        #countdown {
+            font-size: 24px;
+            margin-top: 30px;
+        }
+
+        /* Loader styling */
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            margin-top: 30px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Info section styling */
+        .info-section {
+            margin-top: 50px;
+        }
+
+        .info-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .info-section ul {
+            list-style: none;
+            font-size: 1.2rem;
+        }
+
+        .info-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .info-section ul li::before {
+            content: "✅ ";
+            color: #28a745;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to CAT Exploit</h1>
+        <p>Join our Discord server to stay updated with the latest scripts and tools!</p>
+        <a class="btn" href="https://discord.com/invite/RNBzYeM3uy" target="_blank">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/discord-logo.png" alt="Discord Logo" /> <!-- Discord logo -->
+            Join Discord
+        </a>
+
+        <!-- Countdown -->
+        <div id="countdown"></div>
+
+        <!-- Loader -->
+        <div class="loader"></div>
+    </div>
+
+    <!-- Info Section -->
+    <div class="info-section">
+        <h2>What We Offer</h2>
+        <ul>
+            <li>Sharing Exploit news.</li>
+            <li>Giving Latest <strong>Roblox executors</strong> – Exploit are in any time.</li>
+            <li><strong>Bypasses</strong> for link ads and key systems – Get what you need fast.</li>
+            <li>Fresh <strong>exploit scripts</strong> – Script hub / Universal.</li>
+            <li>Actif Support - Solving your problem at any time.</li>
+        </ul>
+    </div>
+
+    <!-- Background Animation -->
+    <div class="background-animation">
+        <!-- Creating multiple dots -->
+        <div class="dot" style="left: 10%; animation-duration: 15s;"></div>
+        <div class="dot" style="left: 20%; animation-duration: 18s;"></div>
+        <div class="dot" style="left: 30%; animation-duration: 22s;"></div>
+        <div class="dot" style="left: 40%; animation-duration: 17s;"></div>
+        <div class="dot" style="left: 50%; animation-duration: 25s;"></div>
+        <div class="dot" style="left: 60%; animation-duration: 12s;"></div>
+        <div class="dot" style="left: 70%; animation-duration: 14s;"></div>
+        <div class="dot" style="left: 80%; animation-duration: 20s;"></div>
+        <div class="dot" style="left: 90%; animation-duration: 16s;"></div>
+        <div class="dot" style="left: 100%; animation-duration: 19s;"></div>
+    </div>
+
+    <script>
+        // Countdown Script
+        const countdown = document.getElementById('countdown');
+        const targetDate = new Date("Dec 31, 2024 23:59:59").getTime();
+        
+        const interval = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            
+            if (distance < 0) {
+                clearInterval(interval);
+                countdown.innerHTML = "Exploit Released!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
