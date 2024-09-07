@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAT Exploit</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000; /* Black background */
+            overflow: hidden;
+            color: white;
+        }
+
+        /* Container styling */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        /* Discord Button Styling */
+        .btn {
+            background-color: #7289da;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 30px; /* More rounded corners */
+            font-size: 18px;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .btn:hover {
+            background-color: #5a6cb2;
+            transform: scale(1.05); /* Slightly enlarges the button */
+        }
+
+        /* Animation background */
+        @keyframes move {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-100vh) rotate(720deg); }
+        }
+
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .background-animation .dot {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: move 10s linear infinite;
+        }
+
+        /* Randomized positioning and delay for dots */
+        .background-animation .dot:nth-child(odd) {
+            animation-delay: -2s;
+        }
+        .background-animation .dot:nth-child(even) {
+            animation-delay: -5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to CAT Exploit</h1>
+        <p>Join our Discord server to stay updated with the latest scripts and tools!</p>
+        <a class="btn" href="https://discord.com/invite/YOUR_INVITE_CODE" target="_blank">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/discord-logo.png" alt="Discord Logo" /> <!-- Discord logo -->
+            Join Discord
+        </a>
+    </div>
+
+    <!-- Background Animation -->
+    <div class="background-animation">
+        <!-- Creating multiple dots -->
+        <div class="dot" style="left: 10%; animation-duration: 15s;"></div>
+        <div class="dot" style="left: 20%; animation-duration: 18s;"></div>
+        <div class="dot" style="left: 30%; animation-duration: 22s;"></div>
+        <div class="dot" style="left: 40%; animation-duration: 17s;"></div>
+        <div class="dot" style="left: 50%; animation-duration: 25s;"></div>
+        <div class="dot" style="left: 60%; animation-duration: 12s;"></div>
+        <div class="dot" style="left: 70%; animation-duration: 14s;"></div>
+        <div class="dot" style="left: 80%; animation-duration: 20s;"></div>
+        <div class="dot" style="left: 90%; animation-duration: 16s;"></div>
+        <div class="dot" style="left: 100%; animation-duration: 19s;"></div>
+    </div>
+</body>
+</html>
